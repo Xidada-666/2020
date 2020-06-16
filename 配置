@@ -1,0 +1,51 @@
+
+..由于你的 VPS 内核支持开启 BBR ...已经为你启用 BBR 优化....
+
+
+---------- V2Ray 配置信息 -------------
+
+ 地址 (Address) = 104.168.148.90
+
+ 端口 (Port) = 36437
+
+ 用户ID (User ID / UUID) = db60ded8-b991-450b-a621-fcf49df96408
+
+ 额外ID (Alter Id) = 233
+
+ 传输协议 (Network) = tcp
+
+ 伪装类型 (header type) = none
+
+---------- END -------------
+
+V2Ray 客户端使用教程: https://233v2.com/post/4/
+
+提示: 输入 v2ray url 可生成 vmess URL 链接 / 输入 v2ray qr 可生成二维码链接
+
+免被墙..推荐使用JMS: https://getjms.com
+
+
+---------- Shadowsocks 配置信息 -------------
+
+ 服务器地址 = 104.168.148.90
+
+ 服务器端口 = 63719
+
+ 密码 = 233blog.com
+
+ 加密协议 = chacha20-ietf-poly1305
+
+ SS 链接 = ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToyMzNibG9nLmNvbUAxMDQuMTY4LjE0OC45MDo2MzcxOQ==#233v2.com_ss_104.168.148.90
+
+ 备注: Shadowsocks Win 4.0.6 客户端可能无法识别该 SS 链接
+
+提示: 输入 v2ray ssqr 可生成 Shadowsocks 二维码链接
+
+免被墙..推荐使用JMS: https://getjms.com
+
+[root@hwsrv-741219 ~]# ^C
+[root@hwsrv-741219 ~]# v2ray bbr
+
+ 1. 安装 BBR
+
+ 2. 安装 LotServer(锐速)
