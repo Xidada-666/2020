@@ -20,3 +20,7 @@ Sudo systemctl restart v2ray
 Service v2ray. Status
 
 // 客户端就可以通过vmess 协议链接上去了
+
+// 命令查看运行日志/如果报错可见
+ journalctl -u v2ray
+
