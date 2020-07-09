@@ -64,8 +64,15 @@ php composer.phar   install
     500 错误就 一直安装
      重安装
      rm -rf  .lock 
-12 . 定时任务
-    Cron：  php    /www/wwwroot/www.my-vip.tk/v2board/artisan  schedule:run
+12 . 定时任务. （支付等功能都是依赖与计划任务的所以一定要配置正确奥）
+
+    shell Script:
+    v2board 
+    N minutes  1 Min
+    php /www/wwwroot/www.hispeedups.vip/artisan  schedule:run
+    
+    安装 pm2 
+    /www/wwwroot/www.hispeedups.vip/   pm2.yaml   veboard   add
 
 
 *** 后端 1  ： https://github.com/tokumeikoi/aurora    官方版本
