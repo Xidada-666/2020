@@ -1,6 +1,9 @@
 
-  // 详细文档
+   详细文档
 https://zhujiget.com/4542.html
+
+   官方部署
+https://docs.v2board.com/deploy/aapanel.html
 
 ***前端后端视频教程
 https://www.youtube.com/watch?v=jkzInrnPMqU&t=4s
@@ -73,6 +76,15 @@ php composer.phar   install
     
     安装 pm2 
     /www/wwwroot/www.hispeedups.vip/   pm2.yaml   veboard   add
+    
+找到PM2 Manager 4.2.2进行安装，安装完成后按照如下填写
+
+在 Project root directory 选择站点目录
+在 Startup file name 填写 pm2.yaml
+在 project name 填写 v2board
+
+填写后点击Add添加即可运行。当然你也可以使用supervisor进行守护。
+
 
 
 *** 后端 1  ： https://github.com/tokumeikoi/aurora    官方版本
@@ -126,9 +138,5 @@ git clone https://github.com/ColetteContreras/v2ray-poseidon.git
 ****** 后端安装 ******
      完整的手动安装文档 
 https://xiaota.me/2020/02/23/2020-02-23/#more
-
-
-sudo ~/.acme.sh/acme.sh --issue -d myvip.ga --standalone -k ec-256
-
-sudo ~/.acme.sh/acme.sh --installcert -d myvip.ga --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+ 
 
