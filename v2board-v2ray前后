@@ -135,6 +135,9 @@ git clone https://github.com/ColetteContreras/v2ray-poseidon.git
     dc logs
 
 
+******注意
+如果前后端节点安装在一个电脑上面，那么 v2board配置需要修改端口  比如 50000:50000  那么  docker-compose.yml 应该是50000:443,并且这个域名等cdn 需要关闭奥
+
 ****** 后端安装 ******
      完整的手动安装文档 
 https://xiaota.me/2020/02/23/2020-02-23/#more
