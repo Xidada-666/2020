@@ -277,3 +277,9 @@ skyZIP™ Proxy :（免费）
 可以使用工具一键更改，也可以手动改，主要是很容易失效，需要经常改，比较麻烦
 
 https://github.com/kelthuzadx/hosts
+
+Azpeedeo.
+
+giggle-lens-exclude-derive-blus-accuse-minimum-kiss-wall-thing-escape-catalog
+
+
