@@ -41,12 +41,19 @@ int main()
     {
         memset(buf,0,100);
         ssize_t size = recvfrom(sockFD,buf,sizeof(buf),0,(struct sockaddr*)&client,(socklen_t*)&len) ;
+        if(size<0)
+        {
+            perror("err\n");
+        }
+
         buf[size] = '\0';
 
         printf("server: %s\n",buf);
 
         char *p ="000123";
-        sendto(sockFD,p,6,0,(struct sockaddr*)&client,len);
+        size = sendto(sockFD,p,6,0,(struct sockaddr*)&client,len);
+
+        printf("send size :%d\n",size);
     }
     close(sockFD);
     return 0;

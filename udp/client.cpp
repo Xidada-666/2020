@@ -25,9 +25,11 @@ int main()
     while (1)
     {
         memset(buf,0,100);
-        sendto(sockFD,p,8,0,(struct sockaddr*)&ser,len);
+        ssize_t size = sendto(sockFD,p,8,0,(struct sockaddr*)&ser,len);
 
-        ssize_t size = recvfrom(sockFD,buf,100,0,(struct sockaddr*)&ser,(socklen_t*)&len);
+        printf("send size %d\n",size);
+
+        size = recvfrom(sockFD,buf,100,0,(struct sockaddr*)&ser,(socklen_t*)&len);
 
         buf[size] = '\0';
         printf("client: %s\n",buf);
