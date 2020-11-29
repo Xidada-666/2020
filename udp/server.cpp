@@ -32,6 +32,7 @@ int main()
         perror("bind\n");
         exit(1);
     }
+    printf("bind ok\n");
 
     char buf[100];
     len = sizeof(struct sockaddr_in);

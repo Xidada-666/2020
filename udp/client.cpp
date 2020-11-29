@@ -31,7 +31,7 @@ int main()
 
         buf[size] = '\0';
         printf("client: %s\n",buf);
-        sleep(2);
+        sleep(1);
     }
     close(sockFD);
     return 0;
