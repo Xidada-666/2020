@@ -6,9 +6,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
-
 #define PORT 9000
-
 int main()
 {
     int sockFD = socket(AF_INET,SOCK_DGRAM,0);
@@ -24,6 +22,10 @@ int main()
     addr_serv.sin_port = htons(PORT);
     addr_serv.sin_family = AF_INET;
     addr_serv.sin_addr.s_addr = htonl(INADDR_ANY);
+
+    int flag = 1;
+    setsockopt(sockFD,SOL_SOCKET,SO_REUSEADDR,&flag,sizeof(flag));
+    setsockopt(sockFD,SOL_SOCKET,SO_REUSEPORT,&flag,sizeof(flag));
 
     if(bind(sockFD,(struct sockaddr*)&addr_serv,sizeof(struct sockaddr_in)) < 0)
     {

@@ -17,7 +17,7 @@ int main()
     struct sockaddr_in ser;
     ser.sin_port   = htons(PORT);
     ser.sin_family = AF_INET    ;
-    ser.sin_addr.s_addr = inet_addr("127.0.0.1");
+    ser.sin_addr.s_addr = inet_addr("103.100.211.220") ;
 
     int len = sizeof(struct sockaddr_in);
     char * p = "zhangsan";
