@@ -37,6 +37,7 @@ int main()
     char buf[100];
     len = sizeof(struct sockaddr_in);
     struct sockaddr_in client;
+    int i  = 0;
     while (1)
     {
         memset(buf,0,100);
@@ -50,11 +51,14 @@ int main()
 
         printf("server: %s\n",buf);
 
-        char *p ="000123";
-        size = sendto(sockFD,p,6,0,(struct sockaddr*)&client,len);
+
+        size = sendto(sockFD,&i,sizeof(int),0,(struct sockaddr*)&client,len);
+
+        i++;
 
         printf("send size :%d\n",size);
     }
+
     close(sockFD);
     return 0;
 }
