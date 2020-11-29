@@ -6,7 +6,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
-#define PORT 9000
+#define PORT 9998
 int main()
 {
     int sockFD = socket(AF_INET,SOCK_DGRAM,0);
@@ -32,6 +32,7 @@ int main()
         perror("bind\n");
         exit(1);
     }
+
     char buf[100];
     len = sizeof(struct sockaddr_in);
     struct sockaddr_in client;

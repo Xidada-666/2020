@@ -8,7 +8,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define PORT 9000
+#define PORT 9998
 
 int main()
 {
