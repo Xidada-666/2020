@@ -8,7 +8,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define PORT 9998
+#define PORT 9999
 
 int main()
 {
@@ -33,7 +33,7 @@ int main()
 
         buf[size] = '\0';
         printf("client: %s\n",buf);
-        sleep(1);
+
     }
     close(sockFD);
     return 0;

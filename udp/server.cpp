@@ -6,7 +6,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
-#define PORT 9998
+#define PORT 9999
 int main()
 {
     int sockFD = socket(AF_INET,SOCK_DGRAM,0);
