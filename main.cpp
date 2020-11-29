@@ -21,6 +21,12 @@ int main( int argc, char* argv[] ) {
     int reuse = 1;
     setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
 
+    int sendbuf = 1024;
+    socklen_t  len = sizeof(sendbuf);
+    setsockopt(sock,SOL_SOCKET,SO_SNDBUF,&sendbuf,sizeof(sendbuf));
+    getsockopt(sock,SOL_SOCKET,SO_SNDBUF,&sendbuf,(socklen_t*)&len);
+    printf("send buffer : %d\n",sendbuf);
+
     struct sockaddr_in address;
     bzero(&address, sizeof(address));
     address.sin_family = AF_INET;
