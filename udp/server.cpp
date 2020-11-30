@@ -29,6 +29,17 @@ int main()
     setsockopt(sockFD,SOL_SOCKET,SO_REUSEADDR,&flag,sizeof(flag));
     setsockopt(sockFD,SOL_SOCKET,SO_REUSEPORT,&flag,sizeof(flag));
 
+    int keepalive = 1;
+    setsockopt(sockFD,SOL_SOCKET,SO_KEEPALIVE,(void*)(&keepalive),(socklen_t)sizeof(keepalive));
+
+    int keepalive_time = 30;
+    setsockopt(sockFD, IPPROTO_TCP, TCP_KEEPIDLE,(void*)(&keepalive_time),(socklen_t)sizeof(keepalive_time));
+    int keepalive_intvl = 3;
+    setsockopt(sockFD, IPPROTO_TCP, TCP_KEEPINTVL,(void*)(&keepalive_intvl),(socklen_t)sizeof(keepalive_intvl));
+    int keepalive_probes= 3;
+    setsockopt(sockFD, IPPROTO_TCP, TCP_KEEPCNT,(void*)(&keepalive_probes),(socklen_t)sizeof(keepalive_probes));
+    //设置SO_KEEPALIVE选项来开启KEEPALIVE，然后通过TCP_KEEPIDLE、TCP_KEEPINTVL和TCP_KEEPCNT设置keepalive的保活时间、间隔、次数等参数。
+
     if(bind(sockFD,(struct sockaddr*)&addr_serv,sizeof(struct sockaddr_in)) < 0)
     {
         perror("bind\n");
@@ -48,16 +59,10 @@ int main()
         {
             perror("err\n");
         }
-
         buf[size] = '\0';
-
         printf("server: %s\n",buf);
-
-
         size = sendto(sockFD,&i,sizeof(int),0,(struct sockaddr*)&client,len);
-
         i++;
-
         printf("send size :%d\n",size);
     }
 

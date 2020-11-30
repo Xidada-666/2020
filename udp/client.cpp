@@ -30,10 +30,8 @@ int main()
         printf("send size %d\n",size);
 
         size = recvfrom(sockFD,buf,100,0,(struct sockaddr*)&ser,(socklen_t*)&len);
-
         buf[size] = '\0';
         printf("client: %s\n",buf);
-
     }
     close(sockFD);
     return 0;
